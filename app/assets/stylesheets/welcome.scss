@@ -1,0 +1,48 @@
+
+.welcome{
+  .spacer-50{
+    height: 50px;
+  }
+  .login-card{
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 20px 20px 80px rgb(206, 206, 206)
+  }
+  //input[type="radio"] {
+  //  visibility: hidden
+  //}
+
+  input[type='radio']:checked {
+    background-color: #7b2ee8
+  }
+  .gender-l {
+    margin: 0
+  }
+  #male {
+    display: none
+  }
+  .form-control {
+    border: 1.5px solid #7b2ee8
+  }
+
+  .form-control:focus {
+    box-shadow: none
+  }
+  .btn.btn-primary {
+    background-color: #fff;
+    color: #555;
+    border: 1px solid #7b2ee8;
+    width: 115px
+  }
+
+  .btn.btn-primary:hover {
+    background-color: #a069ee;
+    color: #fff
+  }
+
+
+  .btn-primary:not(:disabled):not(.disabled).active,
+  .btn-primary:not(:disabled):not(.disabled):active {
+    background-color: #7b2ee8
+  }
+}
