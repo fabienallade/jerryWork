@@ -7,7 +7,6 @@ $("[name='my-checkbox']").bootstrapSwitch({
     onText:"Oui",
     offText:"Non"
 });
-$(document).ready(()=>{
     window.addEventListener("load", () => {
         const element = document.querySelector("#form_new");
         element.addEventListener("ajax:success", (event) => {
@@ -16,8 +15,10 @@ $(document).ready(()=>{
             element.insertAdjacentHTML("beforeend", xhr.responseText);
         });
         element.addEventListener("ajax:error", () => {
-            console.log("fabien")
             element.insertAdjacentHTML("beforeend", "<p>ERROR</p>");
         });
+        document.body.addEventListener("ajax:send", (event) => {
+            console.log("fabien")
+            const [data, status, xhr] = event.detail;
+        });
     });
-})

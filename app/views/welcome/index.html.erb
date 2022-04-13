@@ -5,45 +5,49 @@
       <h3 class="text-center h3">Login</h3>
       <span class="text-center badge rounded-pill bg-primary">Pas encore de compte</span>
     </div>
-    <%= form_with(url: "welcome/new",id: "form_new",local: false,method: :post) do |form| %>
-    <div class="mb-3 row">
-      <%= form.label :name,"Nom",class:"col-sm-2 col-form-label" %>
-<!--      <label for="name" class="col-sm-2 col-form-label">Nom</label>-->
-      <div class="col-sm-10">
-        <%= form.text_field :name,class:"form-control",required: true %>
-<!--        <input type="text" class="form-control" id="name" value="">-->
+    <%= form_with(url: "welcome/new", id: "form_new", local: false, method: :post,
+                  data: {
+                    target: "welcome.form",
+                    action: "ajax:beforeSend->welcome#submitForm"
+                  }) do |form| %>
+      <div class="mb-3 row">
+        <%= form.label :name, "Nom", class: "col-sm-2 col-form-label" %>
+        <!--      <label for="name" class="col-sm-2 col-form-label">Nom</label>-->
+        <div class="col-sm-10">
+          <%= form.text_field :name, class: "form-control", required: true %>
+          <!--        <input type="text" class="form-control" id="name" value="">-->
+        </div>
       </div>
-    </div>
-    <div class="mb-3 row">
-      <%= form.label :surname,"Prenoms",class:"col-sm-2 col-form-label" %>
-<!--      <label for="surname" class="col-sm-2 col-form-label">Prenom</label>-->
-      <div class="col-sm-10">
-        <%= form.text_field :surname,class:"form-control",required: true %>
-<!--        <input type="text" class="form-control" id="surname" value="">-->
+      <div class="mb-3 row">
+        <%= form.label :surname, "Prenoms", class: "col-sm-2 col-form-label" %>
+        <!--      <label for="surname" class="col-sm-2 col-form-label">Prenom</label>-->
+        <div class="col-sm-10">
+          <%= form.text_field :surname, class: "form-control", required: true %>
+          <!--        <input type="text" class="form-control" id="surname" value="">-->
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <%= form.label :birthday,"Date de naissance",class:"col-sm-2 col-form-label" %>
-<!--      <label for="birthday" class="col-sm-2 col-form-label">Date de naissance</label>-->
-      <div class="col-sm-10">
-<!--        <input type="date" class="form-control" id="birthday" value="">-->
-        <%= form.date_field  :birthday,class:"form-control",required: true %>
+      <div class="row">
+        <%= form.label :birthday, "Date de naissance", class: "col-sm-2 col-form-label" %>
+        <!--      <label for="birthday" class="col-sm-2 col-form-label">Date de naissance</label>-->
+        <div class="col-sm-10">
+          <!--        <input type="date" class="form-control" id="birthday" value="">-->
+          <%= form.date_field :birthday, class: "form-control", required: true %>
+        </div>
       </div>
-    </div>
-    <div class="col-auto row">
-      <div class="col text-center">
-        <label class="form-check-label my-2" for="autoSizingCheck2">
-          Vous avez déjà des notions de programmation ?
-        </label>
+      <div class="col-auto row">
+        <div class="col text-center">
+          <label class="form-check-label my-2" for="autoSizingCheck2">
+            Vous avez déjà des notions de programmation ?
+          </label>
+        </div>
+        <div class="d-flex justify-content-center align-content-center">
+          <input type="checkbox" name="my-checkbox" checked>
+        </div>
       </div>
-      <div class="d-flex justify-content-center align-content-center">
-        <input type="checkbox" name="my-checkbox" checked>
+      <div class="d-flex align-items-center justify-content-sm-end button-section mt-4 mb-3">
+        <input class="btn btn-primary mx-2" name="courseOf" type="submit" value="Cours Collectif"/>
+        <input class="btn btn-secondary" name="courseOfSole" value="Cours particulier" type="submit">
       </div>
+      </div>
+    <% end %>
     </div>
-    <div class="d-flex align-items-center justify-content-sm-end button-section mt-4 mb-3">
-      <input class="btn btn-primary mx-2" name="courseOf" type="submit" value="Cours Collectif"/>
-      <input class="btn btn-secondary" name="courseOfSole" value="Cours particulier" type="submit">
-    </div>
-  </div>
-      <% end %>
-</div>
