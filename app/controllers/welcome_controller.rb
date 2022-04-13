@@ -9,6 +9,6 @@ class WelcomeController < ApplicationController
     #   # format.html {redirect_to params,notice: "Les informations sont creer"}
     #   format.json { render json: params}
     # end
-    render json: @data
+    render json: @data,status: :created
   end
 end
