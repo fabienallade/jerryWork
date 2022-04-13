@@ -4,11 +4,12 @@ class WelcomeController < ApplicationController
 
   def create
     p params
-    @data={name:"fabien"}
+    @data={name:params[:name],surname: params[:surname],birthday:params[:birthday],
+           checkValue:params[:checkbox_name],courseOfSole:params[:courseOfSole]}
     # respond_to do |format|
     #   # format.html {redirect_to params,notice: "Les informations sont creer"}
     #   format.json { render json: params}
     # end
-    render json: @data,status: :im_used
+    render json: @data,status: :ok
   end
 end

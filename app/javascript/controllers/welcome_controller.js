@@ -5,7 +5,12 @@ export default class extends Controller {
     connect() {
         console.log("bienvenue chez nous")
     }
-    submitForm(){
-        console.log("l'évenement vient de prendre")
+    submitForm(event){
+        const [_data, _status, xhr] = event.detail;
+        console.log(event.detail)
+        // console.log("l'évenement vient de prendre")
     }
+    // submitError(){
+    //
+    // }
 }

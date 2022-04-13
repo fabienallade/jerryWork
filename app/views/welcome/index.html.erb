@@ -8,7 +8,7 @@
     <%= form_with(url: "welcome/new", id: "form_new", local: false, method: :post,
                   data: {
                     target: "welcome.form",
-                    action: "ajax:beforeSend->welcome#submitForm"
+                    action: "ajax:complete->welcome#submitForm"
                   }) do |form| %>
       <div class="mb-3 row">
         <%= form.label :name, "Nom", class: "col-sm-2 col-form-label" %>
@@ -41,13 +41,14 @@
           </label>
         </div>
         <div class="d-flex justify-content-center align-content-center">
-          <input type="checkbox" name="my-checkbox" checked>
+          <%= form.check_box :checkbox_name ,id:"check_name",checked:false%>
         </div>
       </div>
       <div class="d-flex align-items-center justify-content-sm-end button-section mt-4 mb-3">
-        <input class="btn btn-primary mx-2" name="courseOf" type="submit" value="Cours Collectif"/>
+        <input class="btn btn-primary mx-2" name="courseOfSole" type="submit" value="Cours Collectif"/>
         <input class="btn btn-secondary" name="courseOfSole" value="Cours particulier" type="submit">
       </div>
+      <div id="result"></div>
       </div>
     <% end %>
     </div>
