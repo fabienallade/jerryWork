@@ -1,4 +1,5 @@
 
+
 .welcome{
   .spacer-50{
     height: 50px;
@@ -28,17 +29,17 @@
   .form-control:focus {
     box-shadow: none
   }
-  .btn.btn-primary {
-    background-color: #fff;
-    color: #555;
-    border: 1px solid #7b2ee8;
-    width: 115px
-  }
-
-  .btn.btn-primary:hover {
-    background-color: #a069ee;
-    color: #fff
-  }
+  //.btn.btn-primary {
+  //  background-color: #fff;
+  //  color: #555;
+  //  border: 1px solid #7b2ee8;
+  //  width: 115px
+  //}
+  //
+  //.btn.btn-primary:hover {
+  //  background-color: #a069ee;
+  //  color: #fff
+  //}
 
 
   .btn-primary:not(:disabled):not(.disabled).active,
